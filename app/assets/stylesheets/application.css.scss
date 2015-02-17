@@ -1,0 +1,10 @@
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ 
+ #logo { 
+  color: #000000;
+  &:hover {
+  color: #DCDCDC;
+  text-decoration: none;
+  }
+ }
