@@ -2,6 +2,23 @@
   
   <!-- tag line? -->
   
-  
-  <!-- form for email -->
+    <div class="row signup-form">
+      <h2>Finna hear more?</h2>
+        <div class="col-md-6">
+          <%= form_for(@newsletter_subscription, url: newsletter_subscriptions_path, :html=> {:class => "form-inline"}) do |f| %>
+          <%= render 'shared/error_messages' %>
+         
+          <%= f.label :email, class: "sr-only" %>
+          <%= f.email_field :email, class: 'form-control', placeholder: "Email" %>
+          
+          <%= f.submit "Sign up", class: 'btn btn-warning btn-xs' %>
+          <% end %>
+        </div>
+    </div>
+  </form>  
+  <div class="row pull-right">
+    <div class="app_badge">
+      <%= link_to image_tag("app_store_badge.png", alt: "Download in the App Store", size:"250x100"), "itms://itunes.apple.com/us/app/apple-store/voices-for-iphone/id965692648?mt=8&uo=4", class: "img-responsive" %>
+    </div>
+  </div>
 </body>
