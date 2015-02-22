@@ -6,7 +6,7 @@ class NewsletterSignupTest < ActionDispatch::IntegrationTest
     assert_no_difference 'NewsletterSubscription.count' do
       post newsletter_subscriptions_path, newsletter_subscription: {email: "user@invalid"}
     end
-    assert_redirected_to root_url
+    assert_template 'static_pages/home'
   end
   
   test "valid signup information" do
