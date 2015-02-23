@@ -1,25 +1,68 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ /* home page */
  
+ body {
+  padding-top: 120px;
+ }
+
+ .navbar-brand {
+  padding-top: 15px;
+ }
+ 
+ .navbar-default {
+  padding-top: 15px;
+  border-color: transparent;
+  background-color: #FF8005;
+ }
+
  #logo { 
-  color: #000000;
+  float: left;
+  margin-left: 15px;
+  color: white;
   text-decoration: none;
+  font-size: 3.0em;
   &:hover {
   color: #454545;
   text-decoration: none;
   }
  }
  
- .app_badge {
-  position: relative;
-  bottom: 20px;
+ /* nav links navbar */
+ .navbar-default .nav li a{
+  color: white;
+  text-decoration: none;
  }
+ 
+ .navbar-default .nav li a:hover{
+  color: #b2b2b2;
+ }
+ 
+ .home-row {
+  padding-top: 30px;
+ }
+ 
+ /* homepage jumbotron */
+ 
+ .center{
+  text-align: center;
+  color: #FF8005 ;
+ }
+ 
+ .jumbotron {
+  background-color: white;
+ }
+ 
+ .app_badge {
+  padding-top: 15px;
+ }
+ 
+ 
 
 /* forms */
 
 .signup-form {
- position: relative;
- top: 45px;
+ color: black;
 }
 
 #error_explanation {
