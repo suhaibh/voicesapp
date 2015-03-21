@@ -15,9 +15,9 @@ ActiveRecord::Schema.define(version: 20150218022102) do
 
   create_table "newsletter_subscriptions", force: :cascade do |t|
     t.string   "email"
-    t.boolean  "active"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.boolean  "active",             default: true
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "unsubscribe_digest"
   end
 
