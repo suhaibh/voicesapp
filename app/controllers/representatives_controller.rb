@@ -1,7 +1,7 @@
 class RepresentativesController < ApplicationController
 
 	def reps
-		@reps = Congress.legislators_locate(params[:address])
+		@reps = CLIENT.legislators_locate(params[:address])
 	end
 
 end

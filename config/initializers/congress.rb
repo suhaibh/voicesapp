@@ -1,2 +1,2 @@
 require 'congress'
-Congress.key = ENV["sunlight"]
+CLIENT = Congress::Client.new(ENV["sunlight"])
