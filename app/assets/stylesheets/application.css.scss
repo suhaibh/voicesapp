@@ -49,10 +49,6 @@
  
  /* homepage jumbotron */
  
- .center{
-  text-align: center;
-  color: #FF8005 ;
- }
  
  .jumbotron {
   background-image: image-url("cream_pixels.png");;
@@ -88,6 +84,11 @@
 .my-btn {
  //@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
  @include button-variant(white, #FF9937, #FF8005);
+}
+
+.search-btn {
+  //@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+ @include button-variant(white, black, black);
 }
 
 .page-header {
