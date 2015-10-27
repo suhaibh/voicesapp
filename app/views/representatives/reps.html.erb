@@ -1,6 +1,18 @@
 <div>
-	Iterate over these results and use the congress.io photos endpoint to pull the portraits. Split results into 3 divs, 2 or 3 cols each
+Iterate over these results and use the congress.io photos endpoint to pull the portraits. Split results into 3 divs, 2 or 3 cols each
 </div>
 </br>
 
-<%= @reps.results %>
+<div class="row"><%= @reps %></div>
+
+</br>
+
+<h1 class="text-center city-state"> <%= city_state %> Representatives </h1>
+<div class="row">
+	<% @reps.each do |rep| %>
+	<div class="col-xs-4 text-center representatives">
+		<%= image_tag(portrait(rep), class: "img-rounded") %>
+		<h3> <%= full_title(rep) %> </h3>
+	</div>
+	<% end %>
+</div>
