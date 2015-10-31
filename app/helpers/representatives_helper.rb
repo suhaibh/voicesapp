@@ -14,7 +14,7 @@ module RepresentativesHelper
 	def rep_twitter(rep)
 		if rep.twitter_id
 			link_to("https://www.twitter.com/#{rep.twitter_id}", target: "_blank", class: "contact-link") do
-				'<i class="fa fa-twitter fa-lg rep-twitter"></i>'.html_safe
+				content_tag(:i, "", class: "fa fa-twitter fa-lg rep-twitter")
 			end
 		end
 	end

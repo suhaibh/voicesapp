@@ -51,7 +51,12 @@
  
  
  .jumbotron {
-  background-image: image-url("cream_pixels.png");;
+  background-color: #fff;
+  border-bottom: 4px solid #FF8005;
+  border-bottom-left-radius: 0em !important;
+  border-bottom-right-radius: 0em !important;
+  padding-bottom: 24px;
+  box-shadow: 0px 10px 10px -7px gray;
  }
  
  .app_badge {
