@@ -94,3 +94,35 @@
 ul.about-list {
  font-size: 125%;
 }
+
+/* representatives */
+
+.city-state {
+  display: none;
+}
+
+.rep-portrait {
+  width: 200px;
+  transition: transform 300ms ease-in-out;
+}
+
+.representatives {
+  padding-top: 20px;
+  margin-bottom: 10px;
+  display: none;
+  
+}
+
+.rep-portrait:hover {
+  transform: scale(1.05, 1.05);
+}
+
+.rep-title {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  box-shadow: 0px 5px 5px -5px gray;
+}
+
+.contact-link {
+  padding-right: 5px;
+}

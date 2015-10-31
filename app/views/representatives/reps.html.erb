@@ -3,16 +3,20 @@ Iterate over these results and use the congress.io photos endpoint to pull the p
 </div>
 </br>
 
-<div class="row"><%= @reps %></div>
+<%= @reps.inspect %>
 
 </br>
 
 <h1 class="text-center city-state"> <%= city_state %> Representatives </h1>
-<div class="row">
+<div class="row text-center">
 	<% @reps.each do |rep| %>
-	<div class="col-xs-4 text-center representatives">
-		<%= image_tag(portrait(rep), class: "img-rounded") %>
-		<h3> <%= full_title(rep) %> </h3>
-	</div>
+		<div class="col-xs-12 col-lg-4 representatives">
+			<%= image_tag(portrait(rep), class: "img-rounded rep-portrait") %>
+			<h4 class="rep-title col-xs-offset-3 col-xs-6 col-lg-12 col-lg-offset-0"> <%= full_title(rep) %> </h4>
+			<p class="rep-contact">
+				<%= rep_twitter(rep) %>
+				<i class="fa fa-envelope fa-lg"></i>
+			</p>
+		</div>
 	<% end %>
 </div>
