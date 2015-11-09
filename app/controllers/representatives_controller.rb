@@ -1,9 +1,9 @@
 class RepresentativesController < ApplicationController
 
 	def reps
-		# sets @reps to the results array
-		@reps = CLIENT.legislators_locate(params[:address]).results
-		@rep = CLIENT.legislators_locate(params[:address])
+		@address = "#{params[:city]} #{params[:state]}"
+		@reps = CLIENT.legislators_locate(@address).results
+		# @rep = CLIENT.legislators_locate(params[:address], params[:state])
 	end
 
 end

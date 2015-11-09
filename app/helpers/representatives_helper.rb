@@ -1,6 +1,6 @@
 module RepresentativesHelper
 	def city_state
-		params[:address]
+		params[:city] + ", " + params[:state]
 	end
 
 	def full_title(rep)
