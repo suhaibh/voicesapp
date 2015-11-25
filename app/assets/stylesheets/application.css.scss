@@ -6,19 +6,10 @@
  
  /* home page */
  
- body {
-  padding-top: 120px;
-  
- }
-
- .navbar-brand {
-  padding-top: 15px;
- }
- 
  .navbar-default {
-  padding-top: 15px;
   border-color: transparent;
   background-color: #FF8005;
+  border-radius: 0px;
  }
 
  #logo { 
@@ -26,7 +17,7 @@
   margin-left: 15px;
   color: white;
   text-decoration: none;
-  font-size: 3.0em;
+  font-size: 2.5em;
   &:hover {
   color: #454545;
   text-decoration: none;

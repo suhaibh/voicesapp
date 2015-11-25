@@ -13,7 +13,7 @@ module RepresentativesHelper
 
 	def rep_facebook(rep)
 		if rep.facebook_id
-			link_to("https://www.facebook.com/#{rep.facebook_id}") do
+			link_to("https://www.facebook.com/#{rep.facebook_id}", target: "_blank") do
 				content_tag(:i, "", class: "fa fa-facebook-official fa-lg rep-facebook contact-link")
 			end
 		end
