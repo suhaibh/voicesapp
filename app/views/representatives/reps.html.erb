@@ -1,6 +1,5 @@
-<%= params[:state] %>
+<%= @reps.inspect %>
 
-</br>
 <% if @reps.any? %>
 	<h1 class="text-center city-state"> <%= city_state %> Representatives </h1>
 	<div class="row text-center">
@@ -10,7 +9,8 @@
 				<h4 class="rep-title col-xs-offset-3 col-xs-6 col-lg-12 col-lg-offset-0"> <%= full_title(rep) %> </h4>
 				<p class="rep-contact">
 					<%= rep_twitter(rep) %>
-					<i class="fa fa-envelope fa-lg"></i>
+					<%= rep_facebook(rep) %>
+					<%= rep_email(rep) %>
 				</p>
 			</div>
 		<% end %>
