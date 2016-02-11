@@ -33,4 +33,10 @@ module RepresentativesHelper
 		end
 	end
 
+	def rep_phone(rep)
+		link_to("tel:#{rep.phone}") do
+			content_tag(:i, "", class: "fa fa-phone fa-lg contact-link")
+		end
+	end
+
 end
