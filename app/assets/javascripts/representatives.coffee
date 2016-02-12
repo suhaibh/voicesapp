@@ -6,3 +6,8 @@ $ ->
 	$('.representatives').fadeIn(1000)
 	$('.city-state').fadeIn(1000)
 	$('.representatives:first').addClass("col-xs-offset-0")
+	$('#test').addClass("banana")
+	for i in $('.rep-title')
+		if i.innerHTML.indexOf("(R)") >= 0
+			i.className += " banana"
+			console.log(i)
