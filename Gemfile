@@ -30,6 +30,7 @@ gem 'bcrypt', '~> 3.1.9'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'congress'
 gem 'figaro'
+gem 'therubyracer'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
