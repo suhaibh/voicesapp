@@ -2,7 +2,7 @@
 
 <% if @reps.any? %>
 	<h1 class="text-center city-state"> <%= city_state %> Representatives </h1>
-	<div class="row text-center">
+	<div class="row text-center" id="test">
 		<% @reps.each do |rep| %>
 			<div class="col-xs-12 col-lg-4 representatives">
 				<%= image_tag(portrait(rep), class: "img-rounded rep-portrait") %>
@@ -13,7 +13,7 @@
 					<%= rep_email(rep) %>
 					<%= rep_phone(rep) %>
 				</p>
-				<p>Term Ends: <%= rep.term_end %></p>
+				<p>Term Ends: <%= rep.term_end.to_datetime.strftime('%B %e, %Y') %></p>
 			</div>
 		<% end %>
 	</div>
