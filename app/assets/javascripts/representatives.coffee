@@ -9,5 +9,6 @@ $ ->
 	$('#test').addClass("banana")
 	for i in $('.rep-title')
 		if i.innerHTML.indexOf("(R)") >= 0
-			i.className += " banana"
-			console.log(i)
+			i.className += " republican-shadow"
+		else
+			i.className += " democrat-shadow"

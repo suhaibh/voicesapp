@@ -116,7 +116,15 @@ ul.about-list {
 .rep-title {
   padding-top: 15px;
   padding-bottom: 15px;
-  box-shadow: 0px 5px 5px -5px gray;
+  /*box-shadow: 0px 5px 5px -5px gray;*/
+}
+
+.republican-shadow {
+  box-shadow: 0px 5px 5px -5px red;
+}
+
+.democrat-shadow {
+  box-shadow: 0px 5px 5px -5px blue; 
 }
 
 .contact-link {
