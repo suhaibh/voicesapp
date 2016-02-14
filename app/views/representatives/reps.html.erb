@@ -1,7 +1,7 @@
 <%= @reps.inspect %>
 
 <% if @reps.any? %>
-	<h1 class="text-center city-state"> <%= city_state %> Representatives </h1>
+	<h1 class="text-center city-state" data-state="<%= params[:state]%>" data-city="<%= params[:city] %>"> <%= city_state %> Representatives </h1>
 	<div class="row text-center" id="test">
 		<% @reps.each do |rep| %>
 			<div class="col-xs-12 col-lg-4 representatives">
