@@ -2,7 +2,7 @@
 
 <% if @reps.any? %>
 	<h1 class="text-center city-state" data-state="<%= params[:state]%>" data-city="<%= params[:city] %>"> <%= city_state %> Representatives </h1>
-	<div class="row text-center" id="test">
+	<div class="row text-center congressional-reps">
 		<% @reps.each do |rep| %>
 			<div class="col-xs-12 col-lg-4 representatives">
 				<%= image_tag(portrait(rep), class: "img-rounded rep-portrait") %>
@@ -18,6 +18,11 @@
 		<% end %>
 	</div>
 
+	<%# add classes to insert stage legislator information %>
+	<div class="row text-center state-reps">
+		
+	</div>
+	
 <% else %>
 	<h1 class="text-center">Sorry, couldn't find representatives for <%= city_state %></h1>
 <%end%>
