@@ -3,10 +3,12 @@
 //You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready(function(){
+	// Fade in effect on load for representatives and adds offset to first rep for better positioning
 	$('.representatives').fadeIn(1000);
 	$('.city-state').fadeIn(1000);
 	$('.representatives:first').addClass("col-xs-offset-0");
 	
+	// Adds custom shadow beneath the representatives title based on party affiliation, modification needed for Independents
 	$repTitle = $('.rep-title');
 	console.log($repTitle);
 	for (i = 0; i < $repTitle.length; i++){
@@ -21,12 +23,11 @@ $(document).ready(function(){
 	// make a call to google maps api to get longitutde and latitude based on city and state then look up local reps through sunlight
 	$location = $('.city-state')
 	$.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address='+$location.data("city")+$location.data("state")+'&key=AIzaSyCJjdXuDzjx5tOcYNHKuNQLAfeIya566pA', function(data){
-		$("<div>", {class: "col-xs-12 col-lg-4"}).appendTo($('.state-reps'));
 		$lat = data.results[0]['geometry']['location']['lat'].toFixed(2);
 		$lng = data.results[0]['geometry']['location']['lng'].toFixed(2);
 		$.getJSON('http://openstates.org/api/v1/legislators/geo/?lat='+$lat+'&long='+$lng+'&apikey=fc3288f6fc76432cab18b7a00cb4f3a9', function(data){
 		$stateLegislator = data;
-		//displayStateReps($stateLegislator);
+		// displayStateReps($stateLegislator); don't uncomment this until the function is done
 		})
 		
 	})
