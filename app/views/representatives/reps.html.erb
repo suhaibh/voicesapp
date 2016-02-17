@@ -1,12 +1,14 @@
 <%= @reps.inspect %>
 
-<% if @reps.any? %>
+<% if @reps.any? %>		<%# Check to see if any representatives were found %>
 	<h1 class="text-center city-state" data-state="<%= params[:state]%>" data-city="<%= params[:city] %>"> <%= city_state %> Representatives </h1>
 	<div class="row text-center congressional-reps">
 		<% @reps.each do |rep| %>
 			<div class="col-xs-12 col-lg-4 representatives">
 				<%= image_tag(portrait(rep), class: "img-rounded rep-portrait") %>
 				<h4 class="rep-title col-xs-offset-3 col-xs-6 col-lg-12 col-lg-offset-0"> <%= full_title(rep) %> </h4>
+				
+				<%# All representative contact links go here adjusts to whether or not rep has social links. Change icon colors %>
 				<p class="rep-contact">
 					<%= rep_twitter(rep) %>
 					<%= rep_facebook(rep) %>
@@ -20,9 +22,10 @@
 
 	<%# add classes to insert stage legislator information %>
 	<div class="row text-center state-reps">
-		
+
 	</div>
-	
+
+<%# If no representatives are found, this message will be displayed %>
 <% else %>
 	<h1 class="text-center">Sorry, couldn't find representatives for <%= city_state %></h1>
 <%end%>
