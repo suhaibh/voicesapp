@@ -28,14 +28,18 @@ module RepresentativesHelper
 	end
 
 	def rep_email(rep)
-		mail_to("#{rep.oc_email}") do 
-			content_tag(:i, "", class: "fa fa-envelope fa-lg contact-link")
+		if rep.oc_email
+			mail_to("#{rep.oc_email}") do 
+				content_tag(:i, "", class: "fa fa-envelope fa-lg contact-link")
+			end
 		end
 	end
 
 	def rep_phone(rep)
-		link_to("tel:#{rep.phone}") do
-			content_tag(:i, "", class: "fa fa-phone fa-lg contact-link")
+		if rep.phone
+			link_to("tel:#{rep.phone}") do
+				content_tag(:i, "", class: "fa fa-phone fa-lg contact-link")
+			end
 		end
 	end
 
