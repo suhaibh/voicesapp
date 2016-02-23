@@ -4,7 +4,12 @@
   </div>
 
 <div class="col-xs-12">
-	</br><%= @reps.inspect %></br>
+	</br>
+	<%# @reps.inspect %>
+	<%= @lat.inspect %>
+	<%= @lng.inspect %>
+
+	</br>
 </div>
 <% if @reps.any? %>		<%# Check to see if any representatives were found %>
 	<h1 class="text-center city-state" data-state="<%= params[:state]%>" data-city="<%= params[:city] %>"> <%= city_state %> Representatives </h1>
