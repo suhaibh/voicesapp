@@ -11,6 +11,7 @@ class RepresentativesController < ApplicationController
 		@lng = "%.2f" % gmaps_response.parsed_response["results"][0]["geometry"]["location"]["lng"]
 
 		# here you'll pass the latitude and longitude into the open states api
+		@state_reps = (HTTParty.get("http://openstates.org/api/v1/legislators/geo/?lat=#{@lat}&long=#{@lng}&apikey=fc3288f6fc76432cab18b7a00cb4f3a9")).parsed_response
 	end
 
 end
