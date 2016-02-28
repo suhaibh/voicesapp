@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150218022102) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "newsletter_subscriptions", force: :cascade do |t|
     t.string   "email"
     t.boolean  "active",             default: true
@@ -21,6 +24,6 @@ ActiveRecord::Schema.define(version: 20150218022102) do
     t.string   "unsubscribe_digest"
   end
 
-  add_index "newsletter_subscriptions", ["email"], name: "index_newsletter_subscriptions_on_email", unique: true
+  add_index "newsletter_subscriptions", ["email"], name: "index_newsletter_subscriptions_on_email", unique: true, using: :btree
 
 end
