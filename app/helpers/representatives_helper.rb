@@ -43,4 +43,19 @@ module RepresentativesHelper
 		end
 	end
 
+	def state_rep_phone(rep)
+		link_to("tel:#{rep["offices"][0]["phone"]}") do
+			content_tag(:i, "", class: "fa fa-phone fa-lg")
+		end
+	end
+
+	def state_rep_full_title rep
+		"#{rep["full_name"]} (#{rep["party"][0]})"
+	end
+
+	# create method for handling broken photo urls
+	def state_rep_portrait
+		
+	end
+
 end
