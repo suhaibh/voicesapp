@@ -36,7 +36,13 @@
 
 	<%# add classes to insert stage legislator information %>
 	<div class="row text-center state-reps">
-
+		<% @state_reps.each do |state_rep| %>
+			<div class="col-xs-12 col-lg-4">
+				<h4 class="rep-title"> <%= state_rep_full_title state_rep %> </h4>
+				<p><%= state_rep["photo_url"] %></p> <%# Add method that inputs default image for broken photo url %>
+				<p><%= state_rep_phone(state_rep) %></p>
+			</div>
+		<% end %>
 	</div>
 
 <%# If no representatives are found, this message will be displayed %>
