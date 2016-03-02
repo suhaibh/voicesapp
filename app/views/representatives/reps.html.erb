@@ -18,18 +18,20 @@
 	<h1 class="text-center city-state" data-state="<%= params[:state]%>" data-city="<%= params[:city] %>"> <%= city_state %> Representatives </h1>
 	<div class="row text-center congressional-reps">
 		<% @reps.each do |rep| %>
-			<div class="col-xs-12 col-lg-4 representatives">
+			<div class="col-xs-6 col-lg-4 representatives">
 				<%= image_tag(portrait(rep), class: "img-rounded rep-portrait") %>
-				<h4 class="rep-title col-xs-offset-3 col-xs-6 col-lg-12 col-lg-offset-0"> <%= full_title(rep) %> </h4>
-				
-				<%# All representative contact links go here adjusts to whether or not rep has social links. Change icon colors %>
-				<p class="rep-contact">
-					<%= rep_twitter(rep) %>
-					<%= rep_facebook(rep) %>
-					<%= rep_email(rep) %>
-					<%= rep_phone(rep) %>
-				</p>
-				<p>Term Ends: <%= rep.term_end.to_datetime.strftime('%B %e, %Y') %></p>
+				<div class="row">
+					<h4 class="rep-title col-xs-offset-3 col-xs-6 col-lg-8 col-lg-offset-2"> <%= full_title(rep) %> </h4>
+					
+					<%# All representative contact links go here adjusts to whether or not rep has social links. Change icon colors %>
+					<p class="rep-contact col-xs-12">
+						<%= rep_twitter(rep) %>
+						<%= rep_facebook(rep) %>
+						<%= rep_email(rep) %>
+						<%= rep_phone(rep) %>
+					</p>
+					<p class="col-xs-12">Term Ends: <%= rep.term_end.to_datetime.strftime('%B %e, %Y') %></p>
+				</div>
 			</div>
 		<% end %>
 	</div>
@@ -37,10 +39,11 @@
 	<%# add classes to insert stage legislator information %>
 	<div class="row text-center state-reps">
 		<% @state_reps.each do |state_rep| %>
-			<div class="col-xs-12 col-lg-4">
-				<h4 class="rep-title"> <%= state_rep_full_title state_rep %> </h4>
-				<p><%= state_rep["photo_url"] %></p> <%# Add method that inputs default image for broken photo url %>
-				<p><%= state_rep_phone(state_rep) %></p>
+			<div class="col-xs-6 col-lg-4">
+				<%# Add method that inputs default image for broken photo url %>
+				<%= state_rep_portrait(state_rep) %>
+				<h4 class="rep-title col-xs-offset-3 col-xs-6 col-lg-8 col-lg-offset-2"> <%= state_rep_full_title state_rep %> </h4>
+				<p class="col-xs-12"><%= state_rep_phone(state_rep) %></p>
 			</div>
 		<% end %>
 	</div>
